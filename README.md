@@ -13,4 +13,6 @@ iOS配置:
 2. 将本工程中src添加到新建的target  
 3. Pandora.xcodeproj 引入新建target依赖 ,添加支付包SDK
 
-  
+License
+-------
+遵循MIT License；
