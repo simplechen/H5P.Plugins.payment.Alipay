@@ -11,6 +11,8 @@
 	<classpathentry kind="lib" path="libs/nopermission.jar"/>
 	<classpathentry kind="lib" path="libs/pdr.jar"/>
 	<classpathentry kind="lib" path="libs/ui.jar"/>
-	<classpathentry kind="lib" path="libs/alipay_msp.jar"/>
+	<classpathentry kind="lib" path="libs/alipaysdk.jar"/>
+	<classpathentry kind="lib" path="libs/alipaysecsdk.jar"/>
+	<classpathentry kind="lib" path="libs/alipayutdid.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

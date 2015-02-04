@@ -27,7 +27,6 @@ function plusReady(){
 			de.id=channel.id;
 			de.innerText=channel.description+"支付";
 			content.appendChild(de);
-			checkServices(channel);
 		}
 		info.innerText=txt;
 	},function(e){
@@ -35,25 +34,7 @@ function plusReady(){
 	});
 }
 document.addEventListener('plusready',plusReady,false);
-// 检测是否安装支付服务
-function checkServices(pc){
-	if(!pc.serviceReady){
-		var txt=null;
-		switch(pc.id){
-			case "alipay":
-			txt="检测到系统未安装“支付宝快捷支付服务”，无法完成支付操作，是否立即安装？";
-			break;
-			default:
-			txt="系统未安装“"+pc.description+"”服务，无法完成支付，是否立即安装？";
-			break;
-		}
-		plus.nativeUI.confirm(txt,function(e){
-			if(e.index==0){
-				pc.installService();
-			}
-		},pc.description);
-	}
-}
+
 
 var w=null;
 var PAYSERVER='http://demo.dcloud.net.cn/helloh5/payment/alipay.php?total=';
@@ -71,7 +52,7 @@ function pay(id){
 			if(xhr.status==200){
 				plus.payment.request(pays[id],xhr.responseText,function(result){
 					plus.nativeUI.alert("支付成功：感谢你的支持，我们会继续努力完善产品。",function(){
-						back();
+						//TODO
 					},"捐赠");
 				},function(error){
 					plus.nativeUI.alert("详情错误信息请参考支付(Payment)规范文档：http://www.html5plus.org/#specification#/specification/Payment.html",null,"支付失败："+error.code);
